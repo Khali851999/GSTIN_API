@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name='swdm_android_task'
