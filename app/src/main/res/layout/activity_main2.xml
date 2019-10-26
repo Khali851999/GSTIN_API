@@ -1,216 +1,317 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Main2Activity"
-    android:orientation="vertical">
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    tools:context=".Main2Activity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3">
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/colorPrimary">
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_weight="1"
-            android:text="Truck Number"
-            android:textColor="#000000" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/truckNumberEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Truck Number" />
-
-        </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginLeft="70dp"
+            android:gravity="center"
+            android:text="GSTIN Details"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
     </LinearLayout>
 
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3">
+        android:layout_marginTop="5dp">
 
-        <TextView
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:text="GSTIN"
-            android:textColor="#000000" />
+            android:orientation="vertical">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="Truck Details"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/gstinEditText"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="GSTIN" />
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
 
-        </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="TRUCK NO."
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/truckNumberLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:boxStrokeColor="#000000">
+                    <!--                    app:errorEnabled="true"-->
+                    <!--                    app:errorTextAppearance="@android:color/holo_red_light"-->
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:text="Buissness Name"
-            android:textColor="#000000" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/truckNumberEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Truck No."
+                        android:textSize="15dp" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/buissnessNameEditText"
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:text="GSTIN Details"
+                android:textColor="@android:color/holo_red_light"
+
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Buissness Name" />
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
 
-        </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="GSTIN"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/gstinLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:boxStrokeColor="#000000">
+<!--                    app:errorEnabled="true"-->
+<!--                    app:errorTextAppearance="@android:color/holo_red_light">-->
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/gstinEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="GSTIN"
+                        android:inputType="textCapCharacters"
+                        android:textSize="15dp" />
+                </com.google.android.material.textfield.TextInputLayout>
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3">
+            </LinearLayout>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:text="Name"
-            android:textColor="#000000" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/nameEditText"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Name" />
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
 
-        </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3">
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Buissness Name"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:text="State Code"
-            android:textColor="#000000" />
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:boxStrokeColor="#000000">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/buissnessNameEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Buissness Name"
+                        android:maxLines="1"
+                        android:textSize="15dp" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/stateCodeEditText"
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="State Code" />
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
 
-        </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Name"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:boxStrokeColor="#000000">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/nameEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Name"
+                        android:textSize="15dp" />
+                </com.google.android.material.textfield.TextInputLayout>
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3">
+            </LinearLayout>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:text="Address"
-            android:textColor="#000000" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/addressEditText"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Address" />
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
 
-        </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3">
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="State Code"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:text="PAN Number"
-            android:textColor="#000000" />
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    app:boxStrokeColor="#000000">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/stateCodeEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="State Code"
+                        android:textSize="15dp" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/panNumberEditText"
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="PAN Number" />
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
 
-        </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Address"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    app:boxStrokeColor="#000000">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/addressEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="125dp"
+                        android:hint="Address"
+                        android:padding="5dp"
+                        android:gravity="top"
+                        android:inputType="textMultiLine"
+                        android:textSize="15dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="PAN Number"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <!--                <FrameLayout-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_weight="2">-->
+
+                <!--                    <EditText-->
+                <!--                        android:id="@+id/panNumberEditText"-->
+                <!--                        android:layout_width="210dp"-->
+                <!--                        android:layout_height="45dp" />-->
+
+                <!--                    <View-->
+                <!--                        android:layout_width="210dp"-->
+                <!--                        android:layout_height="39dp"-->
+                <!--                        android:background="@drawable/backrec" />-->
+                <!--                </FrameLayout>-->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:boxStrokeColor="#000000">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/panNumberEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="PAN Number"
+                        android:textSize="15dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
 
 
-    <Button
-        android:id="@+id/saveButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Save"
-        android:textColor="#000000"
-        android:layout_gravity="center"/>
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/btn"
+                android:text="Save"
+                android:textColor="#FFFFFF" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
 
 </LinearLayout>

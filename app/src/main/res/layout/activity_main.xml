@@ -4,73 +4,121 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3">
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/colorPrimary">
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_weight="1"
-            android:text="Truck Number"
-            android:textColor="#000000" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/truckNumberEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Truck Number"
-                android:text=""/>
-
-        </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginLeft="70dp"
+            android:gravity="center"
+            android:text="GSTIN Auto Details"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
     </LinearLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="Truck Details"
+        android:layout_marginTop="100dp"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="15dp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3">
+        android:orientation="horizontal">
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_weight="1"
-            android:text="GSTIN"
-            android:textColor="#000000" />
+            android:layout_marginLeft="15dp"
+            android:text="TRUCK NO."
+            android:textColor="#000000"
+            android:textStyle="bold" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="0dp"
+        <FrameLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="2">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/gstinEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="GSTIN" />
+            <EditText
+                android:id="@+id/truckNumberEditText"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:text="08AQAPD3533F1ZD" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+            <View
+                android:layout_width="200dp"
+                android:layout_height="39dp"
+                android:background="@drawable/backrec" />
+        </FrameLayout>
+
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="25dp"
+        android:text="GSTIN Details"
+        android:textColor="@android:color/holo_red_light"
+
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:text="GSTIN"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2">
+
+            <EditText
+                android:id="@+id/gstinEditText"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:text="08AQAPD3533F1ZD" />
+
+            <View
+                android:layout_width="200dp"
+                android:layout_height="39dp"
+                android:background="@drawable/backrec" />
+        </FrameLayout>
+
+    </LinearLayout>
+
 
     <Button
         android:id="@+id/next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:text="Next"/>
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/btn"
+        android:text="Next"
+        android:textColor="#FFFFFF" />
 
 </LinearLayout>

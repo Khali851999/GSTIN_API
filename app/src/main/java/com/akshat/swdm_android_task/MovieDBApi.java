@@ -11,7 +11,7 @@ import retrofit2.http.Query;
 
 public class MovieDBApi {
 
-    public static final String API_KEY = "pLMbJdVKRHNxC9UhK7NlwUik1Y33";
+    public static final String API_KEY = "ZgcABgltJYUcPr7BgNVmq5HArP72";
     public static final String BASE_URL = "https://appyflow.in/api/";
 
     public static GSTService gstService = null;
