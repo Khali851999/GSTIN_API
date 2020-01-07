@@ -6,12 +6,11 @@ import retrofit2.Retrofit;
 import retrofit2.Retrofit.Builder;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public class MovieDBApi {
 
-    public static final String API_KEY = "ZgcABgltJYUcPr7BgNVmq5HArP72";
+    public static final String API_KEY = "7EvQzBkCZINgbme1YHPFKiuFk6d2";
     public static final String BASE_URL = "https://appyflow.in/api/";
 
     public static GSTService gstService = null;
@@ -34,7 +33,7 @@ public class MovieDBApi {
     public interface GSTService {
 
         @GET("verifyGST/")
-        Call<Model> getModel(@Query("gstNo") String gstNo ,
+        Call<Model> getModel(@Query("gstNo") String gstNo,
                              @Query("key_secret") String API_KEY);
 
 
