@@ -23,12 +23,96 @@
             android:textSize="20dp" />
     </LinearLayout>
 
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginLeft="15dp"-->
+    <!--        android:text="Truck Details"-->
+    <!--        android:layout_marginTop="100dp"-->
+    <!--        android:textColor="@android:color/holo_red_light"-->
+    <!--        android:textSize="15dp"-->
+    <!--        android:textStyle="bold" />-->
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="horizontal">-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="130dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:layout_marginLeft="15dp"-->
+    <!--            android:text="TRUCK NO."-->
+    <!--            android:textColor="#000000"-->
+    <!--            android:textStyle="bold" />-->
+
+    <!--        <FrameLayout-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="2">-->
+
+    <!--            <EditText-->
+    <!--                android:id="@+id/truckNumberEditText"-->
+    <!--                android:layout_width="200dp"-->
+    <!--                android:layout_height="45dp"-->
+    <!--                android:text="08AQAPD3533F1ZD" />-->
+
+    <!--            <View-->
+    <!--                android:layout_width="200dp"-->
+    <!--                android:layout_height="39dp"-->
+    <!--                android:background="@drawable/backrec" />-->
+    <!--        </FrameLayout>-->
+
+    <!--    </LinearLayout>-->
+
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginLeft="15dp"-->
+    <!--        android:layout_marginTop="25dp"-->
+    <!--        android:text="GSTIN Details"-->
+    <!--        android:textColor="@android:color/holo_red_light"-->
+
+    <!--        android:textSize="15dp"-->
+    <!--        android:textStyle="bold" />-->
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="horizontal">-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="130dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:layout_marginLeft="15dp"-->
+    <!--            android:text="GSTIN"-->
+    <!--            android:textColor="#000000"-->
+    <!--            android:textStyle="bold" />-->
+
+    <!--        <FrameLayout-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="2">-->
+
+    <!--            <EditText-->
+    <!--                android:id="@+id/gstinEditText"-->
+    <!--                android:layout_width="200dp"-->
+    <!--                android:layout_height="45dp"-->
+    <!--                android:text="08AQAPD3533F1ZD" />-->
+
+    <!--            <View-->
+    <!--                android:layout_width="200dp"-->
+    <!--                android:layout_height="39dp"-->
+    <!--                android:background="@drawable/backrec" />-->
+    <!--        </FrameLayout>-->
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:text="Truck Details"
-        android:layout_marginTop="100dp"
         android:textColor="@android:color/holo_red_light"
         android:textSize="15dp"
         android:textStyle="bold" />
@@ -36,33 +120,36 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="130dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="15dp"
             android:text="TRUCK NO."
             android:textColor="#000000"
             android:textStyle="bold" />
 
-        <FrameLayout
-            android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/truckNumberLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2">
+            app:boxStrokeColor="#000000">
+            <!--                    app:errorEnabled="true"-->
+            <!--                    app:errorTextAppearance="@android:color/holo_red_light"-->
 
-            <EditText
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/truckNumberEditText"
-                android:layout_width="200dp"
-                android:layout_height="45dp"
-                android:text="08AQAPD3533F1ZD" />
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Truck No."
+                android:textSize="15dp"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
-            <View
-                android:layout_width="200dp"
-                android:layout_height="39dp"
-                android:background="@drawable/backrec" />
-        </FrameLayout>
 
     </LinearLayout>
 
@@ -70,7 +157,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="5dp"
         android:text="GSTIN Details"
         android:textColor="@android:color/holo_red_light"
 
@@ -80,45 +167,48 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="130dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="15dp"
             android:text="GSTIN"
             android:textColor="#000000"
             android:textStyle="bold" />
 
-        <FrameLayout
-            android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/gstinLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2">
+            app:boxStrokeColor="#000000">
+            <!--                    app:errorEnabled="true"-->
+            <!--                    app:errorTextAppearance="@android:color/holo_red_light">-->
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/gstinEditText"
-                android:layout_width="200dp"
-                android:layout_height="45dp"
-                android:text="08AQAPD3533F1ZD" />
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="GSTIN"
+                android:inputType="textCapCharacters"
+                android:textSize="15dp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-            <View
-                android:layout_width="200dp"
-                android:layout_height="39dp"
-                android:background="@drawable/backrec" />
-        </FrameLayout>
 
     </LinearLayout>
 
-
     <Button
-        android:id="@+id/next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp"
         android:background="@drawable/btn"
+        android:id="@+id/next"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
         android:text="Next"
         android:textColor="#FFFFFF" />
 
+
 </LinearLayout>
+

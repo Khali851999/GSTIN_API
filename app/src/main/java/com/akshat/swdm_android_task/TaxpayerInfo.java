@@ -31,7 +31,7 @@ public class TaxpayerInfo implements Parcelable {
     @SerializedName("ctjCd")
     @Expose
     private String ctjCd;
-    @SerializedName("gstin")
+    @SerializedName("gstinNumber")
     @Expose
     private String gstin;
     @SerializedName("pradr")

@@ -73,7 +73,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:hint="Truck No."
-                        android:textSize="15dp" />
+                        android:textSize="15dp"
+                        android:clickable="false"
+                        android:focusable="false"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -110,8 +112,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:boxStrokeColor="#000000">
-<!--                    app:errorEnabled="true"-->
-<!--                    app:errorTextAppearance="@android:color/holo_red_light">-->
+                    <!--                    app:errorEnabled="true"-->
+                    <!--                    app:errorTextAppearance="@android:color/holo_red_light">-->
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/gstinEditText"
@@ -119,7 +121,9 @@
                         android:layout_height="50dp"
                         android:hint="GSTIN"
                         android:inputType="textCapCharacters"
-                        android:textSize="15dp" />
+                        android:textSize="15dp"
+                        android:clickable="false"
+                        android:focusable="false"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -151,7 +155,9 @@
                         android:layout_height="wrap_content"
                         android:hint="Buissness Name"
                         android:maxLines="1"
-                        android:textSize="15dp" />
+                        android:textSize="15dp"
+                        android:clickable="false"
+                        android:focusable="false"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -182,7 +188,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:hint="Name"
-                        android:textSize="15dp" />
+                        android:textSize="15dp"
+                        android:clickable="false"
+                        android:focusable="false"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -213,7 +221,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:hint="State Code"
-                        android:textSize="15dp" />
+                        android:textSize="15dp"
+                        android:clickable="false"
+                        android:focusable="false"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -247,7 +257,9 @@
                         android:padding="5dp"
                         android:gravity="top"
                         android:inputType="textMultiLine"
-                        android:textSize="15dp" />
+                        android:textSize="15dp"
+                        android:clickable="false"
+                        android:focusable="false"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
@@ -292,7 +304,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:hint="PAN Number"
-                        android:textSize="15dp" />
+                        android:textSize="15dp"
+                        android:clickable="false"
+                        android:focusable="false"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
