@@ -22,7 +22,7 @@ import static com.akshat.swdm_android_task.MovieDBApi.API_KEY;
 public class MainActivity extends AppCompatActivity {
 
     EditText truckNumberEditText, gstinEditText;
-    Button next;
+    Button next,btm,btm22;
     String truckNumber, gstinNumber;
     private static final String TAG = "MainActivity";
     boolean error1 = false;
