@@ -47,15 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 if (truckNumber.length() >= 9 && truckNumber.length() <= 11) {
-                    for (char c : truckNumber.substring(0, 2).toCharArray()) {
-                        if (!Character.isLetter(c)) {
-                            truckNumberLayout.setErrorEnabled(true);
-                            truckNumberLayout.setError("Invalid");
-                            truckNumberLayout.setBoxStrokeColor(Color.RED);
-
-                            error = true;
-                        }
-                    }
+                    
                     for (char c : truckNumber.substring(2, 4).toCharArray()) {
                         if (!Character.isDigit(c)) {
                             truckNumberLayout.setErrorEnabled(true);
@@ -65,7 +57,24 @@ public class MainActivity extends AppCompatActivity {
                             error = true;
                         }
                     }
+                    for (char c : truckNumber.substring(0, 2).toCharArray()) {
+                        if (!Character.isLetter(c)) {
+                            truckNumberLayout.setErrorEnabled(true);
+                            truckNumberLayout.setError("Invalid");
+                            truckNumberLayout.setBoxStrokeColor(Color.RED);
+
+                            error = true;
+                        }
+                    }
                     int seql = truckNumber.length() - 8;
+                    for (char c : truckNumber.substring(truckNumber.length() - 4, truckNumber.length() - 1).toCharArray()) {
+                        if (!Character.isDigit(c)) {
+                            truckNumberLayout.setErrorEnabled(true);
+                            truckNumberLayout.setError("Invalid");
+                            truckNumberLayout.setBoxStrokeColor(Color.RED);
+                            error = true;
+                        }
+                    }
                     for (char c : truckNumber.substring(4, 4 + seql).toCharArray()) {
                         if (!Character.isLetter(c)) {
                             truckNumberLayout.setErrorEnabled(true);
@@ -75,14 +84,7 @@ public class MainActivity extends AppCompatActivity {
                             error = true;
                         }
                     }
-                    for (char c : truckNumber.substring(truckNumber.length() - 4, truckNumber.length() - 1).toCharArray()) {
-                        if (!Character.isDigit(c)) {
-                            truckNumberLayout.setErrorEnabled(true);
-                            truckNumberLayout.setError("Invalid");
-                            truckNumberLayout.setBoxStrokeColor(Color.RED);
-                            error = true;
-                        }
-                    }
+                    
                 } else {
                     error = true;
                     truckNumberLayout.setErrorEnabled(true);
@@ -151,6 +153,14 @@ public class MainActivity extends AppCompatActivity {
     public void getData() {
         Call<Model> modelCall = MovieDBApi.getGstService().getModel(gstinNumber, API_KEY);
         modelCall.enqueue(new Callback<Model>() {
+            
+            @Override
+            public void onFailure(Call<Model> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "GSTIN Invalid", Toast.LENGTH_SHORT).show();
+                gstinEditText.setError("Invalid GSTIN");
+                Log.e(TAG, "onFailure: " + t.getMessage());
+            }
+            
             @Override
             public void onResponse(Call<Model> call, Response<Model> response) {
                 Model model = response.body();
@@ -179,12 +189,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-            @Override
-            public void onFailure(Call<Model> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "GSTIN Invalid", Toast.LENGTH_SHORT).show();
-                gstinEditText.setError("Invalid GSTIN");
-                Log.e(TAG, "onFailure: " + t.getMessage());
-            }
+     
         });
     }
 }
