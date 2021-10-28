@@ -1,0 +1,88 @@
+  public class Main3Activity{
+  EditText truckNumberEditText, gstinEditText;
+    Button next,btm,btm22;
+    String truckNumber, gstinNumber;
+    private static final String TAG = "MainActivity";
+    boolean error1 = false;
+    TextInputLayout truckNumberLayout, gstinLayout;
+    boolean error = false;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+      
+
+        truckNumberEditText = findViewById(R.id.truckNumberEditText);
+        gstinEditText = findViewById(R.id.gstinEditText);
+        truckNumberLayout = findViewById(R.id.truckNumberLayout);
+        gstinLayout = findViewById(R.id.gstinLayout);
+        next = findViewById(R.id.next);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                truckNumber = truckNumberEditText.getText().toString().trim();
+                gstinNumber = gstinEditText.getText().toString().trim().toUpperCase()
+              
+
+
+                if (gstinNumber.length() == 15) {
+                    for (char c : gstinNumber.substring(0, 2).toCharArray()) {
+                        if (!Character.isDigit(c)) {
+                            gstinLayout.setErrorEnabled(true);
+                            gstinLayout.setError("Invalid");
+                            gstinLayout.setBoxStrokeColor(Color.RED);
+                            error1 = true;
+                        }
+                    }
+                    if (!(((Integer.parseInt(gstinNumber.substring(0, 2))) >= 1) && ((Integer.parseInt(gstinNumber.substring(0, 2))) <= 35))) {
+                        gstinLayout.setErrorEnabled(true);
+                        gstinLayout.setError("Invalid");
+                        gstinLayout.setBoxStrokeColor(Color.RED);
+                        error1 = true;
+                    }
+                    Log.e(TAG, "onClick: " + Integer.parseInt(gstinNumber.substring(0, 2)));
+
+           
+                } else {
+                    error1 = true;
+                    gstinLayout.setErrorEnabled(true);
+                    gstinLayout.setBoxStrokeColor(Color.RED);
+                    gstinLayout.setError("Invalid");
+                }
+
+                if (!error) {
+                    truckNumberLayout.setBoxStrokeColor(Color.GREEN);
+                    truckNumberEditText.setEnabled(true);
+                    truckNumberLayout.setErrorEnabled(false);
+                }
+                if (!error1) {
+                    gstinLayout.setBoxStrokeColor(Color.GREEN);
+                    gstinLayout.setErrorEnabled(false);
+                    gstinEditText.setEnabled(true);
+
+                }
+                if (!error1 && !error) {
+                    getData();
+                }
+
+            }
+        });
+
+    }
+
+    public void getData() {
+        Call<Model> modelCall = MovieDBApi.getGstService().getModel(gstinNumber, API_KEY);
+        modelCall.enqueue(new Callback<Model>() {
+            
+            @Override
+            public void onFailure(Call<Model> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "GSTIN Invalid", Toast.LENGTH_SHORT).show();
+                gstinEditText.setError("Invalid GSTIN");
+                Log.e(TAG, "onFailure: " + t.getMessage());
+            }
+          
+
+     
+        });
+    }
+    }
